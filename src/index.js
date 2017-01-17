@@ -7,10 +7,10 @@ import Router from './router';
 
 // Redux
 import { Provider } from 'react-redux'
-import {compose, createStore} from 'redux';
+import {createStore} from 'redux';
 
 // Local Storage
-import persistState from 'redux-localstorage';
+import {persistStore, autoRehydrate} from 'redux-persist'
 
 // Reducers
 import todoApp from './reducers'
@@ -26,11 +26,8 @@ import './styles/index.css';
 const styleElements = document.getElementsByClassName('_styletron_hydrate_');
 
 // Create the store
-const enhancer = compose(
-  persistState(),
-);
-
-let store = createStore(todoApp, enhancer);
+const store = createStore(todoApp, undefined, autoRehydrate());
+persistStore(store);
 
 render(
   <StyletronProvider styletron={new Styletron(styleElements)}>
