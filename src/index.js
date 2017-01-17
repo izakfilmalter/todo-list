@@ -1,9 +1,16 @@
 // Core React Imports
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom'
 
 // Router Imports
 import Router from './router';
+
+// Redux
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+
+// Reducers
+import todoApp from './reducers'
 
 // Styletron Imports
 import Styletron from 'styletron-client';
@@ -15,9 +22,14 @@ import './styles/index.css';
 // Locate the Styletron style tag
 const styleElements = document.getElementsByClassName('_styletron_hydrate_');
 
-ReactDOM.render(
+// Create the store
+let store = createStore(todoApp)
+
+render(
   <StyletronProvider styletron={new Styletron(styleElements)}>
-    {Router}
+    <Provider store={store}>
+      {Router}
+    </Provider>
   </StyletronProvider>,
   document.getElementById('root')
 );
