@@ -17,9 +17,9 @@ class Application extends Component {
         <Logo>Todo<br />List</Logo>
 
         <Column>
-          <AddTodo />
-          <VisibleTodoList />
           <Footer />
+          <VisibleTodoList />
+          <AddTodo />
         </Column>
       </ApplicationContainer>
     );
