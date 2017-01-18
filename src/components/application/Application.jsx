@@ -5,16 +5,22 @@ import Footer from '../../components/footer/Footer';
 import VisibleTodoList from '../../containers/visibleTodoList/VisibleTodoList';
 
 import {
-  ApplicationContainer
+  ApplicationContainer,
+  Column,
+  Logo,
 } from './styles';
 
 class Application extends Component {
   render() {
     return (
       <ApplicationContainer>
-        <AddTodo />
-        <VisibleTodoList />
-        <Footer />
+        <Logo>Todo<br />List</Logo>
+
+        <Column>
+          <AddTodo />
+          <VisibleTodoList />
+          <Footer />
+        </Column>
       </ApplicationContainer>
     );
   }
