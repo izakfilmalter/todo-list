@@ -1,20 +1,20 @@
 // Core React Imports
 import React from 'react';
-import { render } from 'react-dom'
-
-// Router Imports
-import Router from './router';
+import { render } from 'react-dom';
 
 // Redux
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { compose, createStore } from 'redux';
 
 // Local Storage
-import { persistStore, autoRehydrate } from 'redux-persist'
-import crosstabSync from 'redux-persist-crosstab'
+import { persistStore, autoRehydrate } from 'redux-persist';
+import crosstabSync from 'redux-persist-crosstab';
 
 // Reducers
-import todoApp from './reducers'
+import todoApp from './reducers';
+
+// Import application
+import Application from './components/application/Application';
 
 // Styletron Imports
 import Styletron from 'styletron-client';
@@ -42,7 +42,7 @@ crosstabSync(persistor);
 render(
   <StyletronProvider styletron={new Styletron(styleElements)}>
     <Provider store={store}>
-      {Router}
+      <Application />
     </Provider>
   </StyletronProvider>,
   document.getElementById('root')

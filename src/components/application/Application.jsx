@@ -1,22 +1,20 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+
+import AddTodo from '../../containers/addTodo/AddTodo';
+import Footer from '../../components/footer/Footer';
+import VisibleTodoList from '../../containers/visibleTodoList/VisibleTodoList';
 
 import {
   ApplicationContainer
 } from './styles';
 
 class Application extends Component {
-  static propTypes = {
-    Component: PropTypes.func,
-  };
-
   render() {
-    const {
-      Component,
-    } = this.props;
-
     return (
       <ApplicationContainer>
-        <Component />
+        <AddTodo />
+        <VisibleTodoList />
+        <Footer />
       </ApplicationContainer>
     );
   }
