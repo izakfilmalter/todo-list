@@ -1,5 +1,10 @@
 import React, { Component, PropTypes } from 'react';
+
 import Todo from '../todo/Todo';
+
+import {
+  TodoListContainer,
+} from './styles';
 
 class TodoList extends Component {
   render() {
@@ -9,7 +14,7 @@ class TodoList extends Component {
     } = this.props;
 
     return (
-      <div>
+      <TodoListContainer>
         {todos.map(todo =>
           <Todo
             key={todo.id}
@@ -17,7 +22,7 @@ class TodoList extends Component {
             onClick={() => onTodoClick(todo.id)}
           />
         )}
-      </div>
+      </TodoListContainer>
     );
   }
 }

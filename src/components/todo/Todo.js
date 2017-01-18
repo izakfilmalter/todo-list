@@ -2,6 +2,11 @@ import React, { Component, PropTypes } from 'react';
 
 import Checkbox from 'material-ui/Checkbox';
 
+import {
+  checkboxStyles,
+  getLabelStyles,
+} from './styles';
+
 class Todo extends Component {
   render() {
     const {
@@ -15,6 +20,8 @@ class Todo extends Component {
         checked={completed}
         label={text}
         onCheck={onClick}
+        style={checkboxStyles}
+        labelStyle={getLabelStyles(completed)}
       />
     );
   }
