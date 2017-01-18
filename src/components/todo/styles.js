@@ -1,4 +1,4 @@
-import { color, utility } from '../../styles';
+import { utility } from '../../styles';
 
 const negativeOffset = -3;
 
