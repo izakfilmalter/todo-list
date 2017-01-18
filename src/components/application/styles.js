@@ -3,29 +3,30 @@ import { utility } from '../../styles';
 
 const topOffset = 68;
 
-// Application wrapper. Setting flex, overall app dimensions, and overflow hidden.
+// Application wrapper. Setting flex, overall app dimensions.
 export const ApplicationContainer = styled('div', {
   ...utility.flexFlow('row', 'nowrap'),
-  overflow: 'hidden',
+  ...utility.overflowY,
+  boxSizing: 'border-box',
 
-  height: '100vh',
-  width: '100vw',
+  position: 'relative',
 });
 
 export const Logo = styled('h1', {
   fontSize: '100px',
   lineHeight: '100px',
   color: 'hsla(0, 0%, 0%, .4)',
+  position: 'fixed',
   // First number is the initial amount to get the text to align with window.
   // Second number is the actual offset from the edge of the window.
-  marginTop: -17 + topOffset + 'px',
-  marginRight: '110px',
-  marginLeft: -2 + 24 + 'px',
+  top: -17 + topOffset + 'px',
+  left: -2 + 24 + 'px',
 });
 
 export const Column = styled('div', {
   ...utility.flexFlow('column', 'nowrap'),
-  ...utility.overflowY,
+  flexShrink: 0,
+  marginLeft: '350px',
   width: '700px',
   padding: `${topOffset}px 50px`,
 });
