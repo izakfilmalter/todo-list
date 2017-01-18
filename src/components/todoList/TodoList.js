@@ -9,7 +9,7 @@ class TodoList extends Component {
     } = this.props;
 
     return (
-      <ul>
+      <div>
         {todos.map(todo =>
           <Todo
             key={todo.id}
@@ -17,7 +17,7 @@ class TodoList extends Component {
             onClick={() => onTodoClick(todo.id)}
           />
         )}
-      </ul>
+      </div>
     );
   }
 }

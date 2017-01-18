@@ -17,5 +17,6 @@ h5,
 h6,
 p,
 body {
+  font-family: inherit;
   margin: 0;
 }

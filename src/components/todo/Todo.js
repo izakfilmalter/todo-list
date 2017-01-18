@@ -1,5 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 
+import Checkbox from 'material-ui/Checkbox';
+
 class Todo extends Component {
   render() {
     const {
@@ -9,14 +11,11 @@ class Todo extends Component {
     } = this.props;
 
     return (
-      <li
-        onClick={onClick}
-        style={{
-          textDecoration: completed ? 'line-through' : 'none'
-        }}
-      >
-        {text}
-      </li>
+      <Checkbox
+        checked={completed}
+        label={text}
+        onCheck={onClick}
+      />
     );
   }
 }

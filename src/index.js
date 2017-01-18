@@ -20,6 +20,13 @@ import Application from './components/application/Application';
 import Styletron from 'styletron-client';
 import { StyletronProvider } from 'styletron-react';
 
+// MaterialUI And Theme Imports
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
+// InjectTapEvent for MaterialUI
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
 // Global CSS Imports
 import './styles/index.css';
 
@@ -35,15 +42,26 @@ const store = createStore(
   ),
 );
 
-// begin periodically persisting the store
+// Begin periodically persisting the store
 const persistor = persistStore(store, {});
 crosstabSync(persistor);
 
+// Needed for onTouchTap
+// http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
+// Set our MaterialUI Theme
+const muiTheme = getMuiTheme({
+  fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+});
+
 render(
   <StyletronProvider styletron={new Styletron(styleElements)}>
-    <Provider store={store}>
-      <Application />
-    </Provider>
+    <MuiThemeProvider muiTheme={muiTheme}>
+      <Provider store={store}>
+        <Application />
+      </Provider>
+    </MuiThemeProvider>
   </StyletronProvider>,
   document.getElementById('root')
 );
