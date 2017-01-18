@@ -1,8 +1,10 @@
 import { styled } from 'styletron-react';
-import { utility } from '../../styles';
+import { layout, utility } from '../../styles';
 
-// Application wrapper. Setting flex, overall app dimensions, and overflow hidden.
 export const TodoListContainer = styled('div', {
   ...utility.flexFlow('column', 'nowrap'),
   flexShrink: 0,
+  marginLeft: '350px',
+  width: '700px',
+  padding: `${layout.topOffset}px 50px`,
 });

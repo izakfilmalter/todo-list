@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import AddTodo from '../../containers/addTodo/AddTodo';
-import Footer from '../../components/footer/Footer';
 import VisibleTodoList from '../../containers/visibleTodoList/VisibleTodoList';
 
 import {
@@ -20,10 +19,7 @@ class Application extends Component {
           <AddTodo />
         </SideBar>
 
-        <Column>
-          <Footer />
-          <VisibleTodoList />
-        </Column>
+        <VisibleTodoList />
       </ApplicationContainer>
     );
   }

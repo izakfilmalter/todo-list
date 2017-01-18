@@ -37,7 +37,6 @@ class AddTodo extends Component {
           floatingLabelText="Type a todo"
           ref={(node) => this.input = node}
         />
-
       </form>
     );
   }
