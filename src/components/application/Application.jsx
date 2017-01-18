@@ -8,18 +8,21 @@ import {
   ApplicationContainer,
   Column,
   Logo,
+  SideBar,
 } from './styles';
 
 class Application extends Component {
   render() {
     return (
       <ApplicationContainer>
-        <Logo>Todo<br />List</Logo>
+        <SideBar>
+          <Logo>Todo<br />List</Logo>
+          <AddTodo />
+        </SideBar>
 
         <Column>
           <Footer />
           <VisibleTodoList />
-          <AddTodo />
         </Column>
       </ApplicationContainer>
     );

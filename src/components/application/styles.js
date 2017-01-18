@@ -12,15 +12,21 @@ export const ApplicationContainer = styled('div', {
   position: 'relative',
 });
 
+export const SideBar = styled('div', {
+  ...utility.flexFlow('column', 'nowrap'),
+  position: 'fixed',
+  top: 0,
+  left:0,
+});
+
 export const Logo = styled('h1', {
   fontSize: '100px',
   lineHeight: '100px',
   color: 'hsla(0, 0%, 0%, .4)',
-  position: 'fixed',
   // First number is the initial amount to get the text to align with window.
   // Second number is the actual offset from the edge of the window.
-  top: -17 + topOffset + 'px',
-  left: -2 + 24 + 'px',
+  marginTop: -17 + topOffset + 'px',
+  marginLeft: -2 + 24 + 'px',
 });
 
 export const Column = styled('div', {
