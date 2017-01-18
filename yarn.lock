@@ -4431,6 +4431,10 @@ reduce-function-call@^1.0.1:
   dependencies:
     balanced-match "^0.4.2"
 
+redux-persist-crosstab@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/redux-persist-crosstab/-/redux-persist-crosstab-3.5.2.tgz#7c961d49bc96dc2f6286622375b0df7c5d20e733"
+
 redux-persist@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-4.0.1.tgz#e9a0944224973c1b8953515f27816bcc3a6d7bbc"

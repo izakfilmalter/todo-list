@@ -7,10 +7,11 @@ import Router from './router';
 
 // Redux
 import { Provider } from 'react-redux'
-import {createStore} from 'redux';
+import { compose, createStore } from 'redux';
 
 // Local Storage
-import {persistStore, autoRehydrate} from 'redux-persist'
+import { persistStore, autoRehydrate } from 'redux-persist'
+import crosstabSync from 'redux-persist-crosstab'
 
 // Reducers
 import todoApp from './reducers'
@@ -26,8 +27,17 @@ import './styles/index.css';
 const styleElements = document.getElementsByClassName('_styletron_hydrate_');
 
 // Create the store
-const store = createStore(todoApp, undefined, autoRehydrate());
-persistStore(store);
+const store = createStore(
+  todoApp,
+  undefined,
+  compose(
+    autoRehydrate()
+  ),
+);
+
+// begin periodically persisting the store
+const persistor = persistStore(store, {});
+crosstabSync(persistor);
 
 render(
   <StyletronProvider styletron={new Styletron(styleElements)}>
